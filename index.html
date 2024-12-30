@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería Deportiva Interactiva</title>
+  
+  <!-- Fuente personalizada de Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Galería Deportiva Interactiva</h1>
+    <p>Explora el mundo de los deportes y personaliza la experiencia</p>
+  </header>
+
+  <section class="gallery">
+    <div class="image-card" id="soccer" onclick="changeImage('soccer')">
+      <img src="https://urbancolex.com/wp-content/uploads/2020/07/tama%C3%B1o-de-la-pelota-de-futbol-11.png" alt="Fútbol">
+      <p>Fútbol</p>
+    </div>
+    <div class="image-card" id="basketball" onclick="changeImage('basketball')">
+      <img src="https://www.idsports.es/blogadmin/uploads/resize/3_1714655611-pexels-markusspiske-1752757.jpg" alt="Baloncesto">
+      <p>Baloncesto</p>
+    </div>
+    <div class="image-card" id="tennis" onclick="changeImage('tennis')">
+      <img src="https://as1.ftcdn.net/v2/jpg/00/70/05/80/1000_F_70058017_1kSAVhc690JLMEU7nL4PoHuIWTzws2pk.jpg" alt="Tenis">
+      <p>Tenis</p>
+    </div>
+    <div class="image-card" id="baseball" onclick="changeImage('baseball')">
+      <img src="https://www.beisbolmlb.com/wp-content/uploads/beisbolvenezolano4-e1501176946770.jpg" alt="Béisbol">
+      <p>Béisbol</p>
+    </div>
+  </section>
+
+  <section class="interactive">
+    <label for="text-input">Introduce un texto para cambiar el encabezado:</label>
+    <input type="text" id="text-input" placeholder="Escribe algo aquí">
+    <p id="changed-text">Texto original</p>
+  </section>
+
+  <div id="moving-object">
+    <img src="https://png.pngtree.com/png-vector/20190130/ourmid/pngtree-athletes-of-the-asian-games-sports-figures-starting-athletes-gamessports-figurestarting-png-image_581254.jpg" alt="Objeto en movimiento">
+  </div>
+
+  <script src="scripts/script.js"></script>
+</body>
+</html>
