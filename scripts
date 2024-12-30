@@ -1,0 +1,60 @@
+
+// Función para cambiar la imagen
+function changeImage(sport) {
+  const images = {
+    soccer: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu7eVaKC8HfrzovoQdKcaKL2OsXpyshLYgR_FVotDVTj49ofKw3UKWrC8JsjWKqDW0Nlg&usqp=CAU',
+    basketball: 'https://www.sportlife.es/uploads/s1/12/84/81/31/foto-balon-de-baloncesto-en-una-cancha-al-aire-libre-istock.jpeg',
+    tennis: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Tennis_Racket_and_Balls.jpg/800px-Tennis_Racket_and_Balls.jpg',
+    baseball: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmqziYDGtsNkjU-y6a6RBRuA462-tD6GO78Q&s'
+  };
+
+  const imageElement = document.getElementById(sport).querySelector('img');
+  imageElement.src = images[sport];
+}
+
+// Función para cambiar el texto al escribir en el campo
+const textInput = document.getElementById('text-input');
+const changedText = document.getElementById('changed-text');
+
+textInput.addEventListener('input', function() {
+  changedText.textContent = textInput.value;
+});
+
+// Función para mover el objeto
+let position = 0;
+const movingObject = document.getElementById('moving-object');
+
+setInterval(() => {
+  position += 100;
+  if (position > window.innerWidth) position = -100;
+  movingObject.style.left = `${position}px`;
+}, 1000);
+
+// Función para mostrar mensaje de bienvenida
+function showWelcomeMessage() {
+  const nameInput = document.getElementById('name-input');
+  const welcomeMessage = document.getElementById('welcome-message');
+  
+  if (nameInput.value.trim() !== '') {
+    welcomeMessage.textContent = `¡Bienvenido, ${nameInput.value}!`;
+  } else {
+    welcomeMessage.textContent = '¡Hola, visitante!';
+  }
+}
+
+// Función para cambiar el fondo de la página de manera aleatoria
+function changeBackground() {
+  const colors = [
+    'linear-gradient(135deg, #2980b9, #8e44ad)',
+    'linear-gradient(135deg, #f39c12, #f1c40f)',
+    'linear-gradient(135deg, #2ecc71, #27ae60)',
+    'linear-gradient(135deg, #e74c3c, #c0392b)',
+    'linear-gradient(135deg, #8e44ad, #3498db)',
+  ];
+  
+  // Seleccionar un color aleatorio
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+  
+  // Cambiar el fondo de la página
+  document.body.style.background = randomColor;
+}
